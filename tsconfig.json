@@ -1,17 +1,35 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "jsx": "react-native",
     "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
+      ],
+      "expo-router": [
+        "node_modules/expo-router"
+      ],
+      "expo-font": [
+        "node_modules/expo-font"
+      ],
+      "expo-splash-screen": [
+        "node_modules/expo-splash-screen"
       ]
     }
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
+    "src",
+    "node_modules/expo-router",
+    "node_modules/expo-font",
+    "node_modules/expo-splash-screen",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }
